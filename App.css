@@ -1,0 +1,617 @@
+:root {
+  --bg-0: #07090f; /* deep carbon */
+  --bg-1: #0b0e16;
+  --card: #0f1720;
+  --muted: #a6afc1;
+  --gold-1: #c9a64a;
+  --gold-2: #b8913c;
+  --emerald: #0f766e;
+  --glass: rgba(255, 255, 255, 0.04);
+  --glass-strong: rgba(255, 255, 255, 0.06);
+  --text: #e6e9ee;
+  --soft-shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.03);
+  --accent-glow: 0 6px 24px rgba(201, 166, 74, 0.08);
+  --max-width: 1200px;
+}
+
+/* Reset & base */
+* {
+  box-sizing: border-box;
+}
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(180deg, var(--bg-0) 0%, var(--bg-1) 100%);
+  color: var(--text);
+  font-family: Inter, system-ui, Arial;
+}
+a {
+  color: inherit;
+}
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* App layout */
+.app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.main-content {
+  flex: 1;
+  padding-bottom: 40px;
+}
+
+/* Container */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header (luxury) */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 120;
+  background: linear-gradient(
+    180deg,
+    rgba(7, 9, 15, 0.55),
+    rgba(11, 14, 22, 0.35)
+  );
+  backdrop-filter: blur(8px) saturate(120%);
+  border-bottom: 1px solid var(--glass-border);
+  box-shadow: 0 4px 30px rgba(2, 6, 23, 0.5);
+}
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+}
+.brand {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.brand .logo {
+  width: 54px;
+  height: 54px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--gold-1), var(--gold-2));
+  color: #071218;
+  font-weight: 800;
+  font-size: 18px;
+  box-shadow: var(--accent-glow);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.brand .title {
+  line-height: 1;
+}
+.brand .title .name {
+  font-weight: 700;
+  font-size: 16px;
+}
+.brand .title .sub {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* nav */
+.nav {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.18s;
+}
+.nav a:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.02);
+  transform: translateY(-2px);
+}
+.select-lang {
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid var(--glass-border);
+  background: transparent;
+  color: var(--muted);
+}
+
+/* CTA */
+.cta {
+  background: linear-gradient(90deg, var(--gold-1), var(--gold-2));
+  color: #071218;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+  border: none;
+  box-shadow: 0 8px 28px rgba(184, 145, 60, 0.12);
+}
+
+/* TOP STATS (glass cards) */
+.top-stats {
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  margin-top: 6px;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  align-items: stretch;
+}
+.stat-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.015),
+    rgba(255, 255, 255, 0.01)
+  );
+  border-radius: 14px;
+  padding: 14px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--soft-shadow);
+}
+.stat-card .country {
+  font-weight: 800;
+  color: var(--gold-1);
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+.stat-card .numbers {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* support card */
+.support-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(
+    90deg,
+    rgba(201, 166, 74, 0.06),
+    rgba(15, 118, 110, 0.03)
+  );
+  border-radius: 14px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  box-shadow: var(--soft-shadow);
+}
+
+/* Hero (luxury) */
+.section {
+  padding: 34px 0;
+}
+.hero {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+}
+.hero .left {
+  flex: 1;
+  z-index: 5;
+}
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 36px;
+  margin: 0;
+  color: var(--text);
+  letter-spacing: 0.2px;
+}
+.hero p {
+  color: var(--muted);
+  margin: 10px 0 18px;
+}
+.search-box {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.search-box input {
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  color: var(--text);
+  min-width: 360px;
+  outline: none;
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.5) inset;
+}
+.search-box button {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(90deg, var(--gold-1), var(--gold-2));
+  color: #071218;
+  font-weight: 800;
+  box-shadow: var(--accent-glow);
+}
+
+/* right card (map preview) */
+.hero .right {
+  width: 460px;
+}
+.map-preview {
+  background: linear-gradient(
+    180deg,
+    rgba(10, 12, 16, 0.7),
+    rgba(8, 10, 14, 0.6)
+  );
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--soft-shadow);
+}
+.map-preview .title {
+  font-weight: 700;
+  color: var(--gold-1);
+  margin-bottom: 8px;
+}
+.map-placeholder {
+  height: 220px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #061018, #071217);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+}
+
+/* Grid / Cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+.card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--soft-shadow);
+  min-height: 120px;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px rgba(2, 6, 23, 0.6);
+}
+
+/* Markets snapshot */
+.market-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* Footer (mega) */
+.footer {
+  background: linear-gradient(180deg, #05050a, #071019);
+  padding: 46px 0 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.02);
+  color: var(--muted);
+}
+.footer .inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.footer .col {
+  min-width: 200px;
+  flex: 1;
+}
+.footer .col h4 {
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--glass-border);
+}
+
+/* small util */
+.loading {
+  padding: 40px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* responsive */
+@media (max-width: 1100px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero .right {
+    width: 100%;
+  }
+  .map-placeholder {
+    height: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header .container {
+    height: 64px;
+    padding: 10px;
+  }
+  .brand .title .name {
+    font-size: 14px;
+  }
+  .search-box input {
+    min-width: unset;
+    width: 100%;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .nav {
+    display: none;
+  } /* mobile will use drawer later */
+  .container {
+    padding: 0 12px;
+  }
+}
+/* =========================================================
+   GLOBAL LAYOUT IMPROVEMENTS
+   ========================================================= */
+
+.section {
+  margin-top: 40px !important;
+  margin-bottom: 40px !important;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 16px;
+}
+
+/* =========================================================
+     LUXURY CARD STYLE
+     ========================================================= */
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 18px;
+  border-radius: 14px;
+  transition: 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold-1);
+}
+
+/* =========================================================
+     TYPOGRAPHY IMPROVEMENTS
+     ========================================================= */
+
+h1,
+h2,
+h3 {
+  letter-spacing: 0.3px;
+  font-weight: 700;
+}
+
+p {
+  line-height: 1.6;
+}
+/* =========================================================
+   ROYAL BUTTONS
+   ========================================================= */
+
+button,
+.cta,
+.cta-small {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  transition: 0.25s ease;
+  font-family: inherit;
+}
+
+/* Main CTA Button */
+.cta {
+  background: linear-gradient(135deg, #d4af37, #c19a6b);
+  padding: 12px 26px;
+  color: #0a0a0a;
+  border-radius: 10px;
+  font-size: 16px;
+  box-shadow: 0px 4px 10px rgba(212, 175, 55, 0.3);
+}
+
+.cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 6px 14px rgba(212, 175, 55, 0.45);
+}
+
+.cta:active {
+  transform: scale(0.97);
+}
+
+/* Small Button */
+.cta-small {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 6px 18px;
+  border-radius: 8px;
+  color: var(--gold-1);
+  font-size: 14px;
+}
+
+.cta-small:hover {
+  background: var(--gold-1);
+  color: #0a0a0a;
+  border-color: var(--gold-1);
+}
+
+.cta-small:active {
+  transform: scale(0.96);
+}
+/* =========================================================
+   ANIMATIONS — ROYAL SMOOTH PAGE EFFECTS
+   ========================================================= */
+
+/* Fade In */
+.fade-in {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fadeIn 0.9s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In Slow */
+.fade-in-slow {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeInSlow 1.4s ease forwards;
+}
+
+@keyframes fadeInSlow {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In with Scale */
+.fade-scale {
+  opacity: 0;
+  transform: scale(0.96);
+  animation: fadeScale 0.8s ease forwards;
+}
+
+@keyframes fadeScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* ------------------------------
+   ANIMATIONS (GLOBAL)
+------------------------------*/
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+.fade-in-slow {
+  opacity: 0;
+  animation: fadeIn 1.7s ease forwards;
+}
+
+.fade-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  animation: fadeScale 0.9s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeScale {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ------------------------------
+   ROYAL BACKGROUND
+------------------------------*/
+
+body {
+  background: linear-gradient(
+    135deg,
+    #0a2463 0%,
+    #0a2463 40%,
+    #c19a6b 78%,
+    #d4af37 100%
+  );
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  color: #e6e9ee;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+/* Fix for sections */
+.section {
+  margin-top: 50px;
+}
